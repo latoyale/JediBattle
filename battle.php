@@ -1,8 +1,7 @@
 <?php
-require __DIR__ . '/bootstrap.php';
+require __DIR__.'/functions.php';
 
-$shipsLoader = new ShipLoader();
-$ships = $shipsLoader->getShips();
+$ships = get_ships();
 
 $ship1Name = isset($_POST['ship1_name']) ? $_POST['ship1_name'] : null;
 $ship1Quantity = isset($_POST['ship1_quantity']) ? $_POST['ship1_quantity'] : 1;
