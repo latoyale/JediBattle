@@ -9,24 +9,26 @@ $ship2Name = isset($_POST['ship2_name']) ? $_POST['ship2_name'] : null;
 $ship2Quantity = isset($_POST['ship2_quantity']) ? $_POST['ship2_quantity'] : 1;
 
 if (!$ship1Name || !$ship2Name) {
-    header('Location: /index.php?error=missing_data');
+    header('Location: /JediBattle/index.php?error=missing_data');
     die;
 }
 
 if (!isset($ships[$ship1Name]) || !isset($ships[$ship2Name])) {
-    header('Location: /index.php?error=bad_ships');
+    header('Location: /JediBattle/index.php?error=bad_ships');
     die;
 }
 
 if ($ship1Quantity <= 0 || $ship2Quantity <= 0) {
-    header('Location: /index.php?error=bad_quantities');
+    header('Location: /JediBattle/index.php?error=bad_quantities');
     die;
 }
 
 $ship1 = $ships[$ship1Name];
 $ship2 = $ships[$ship2Name];
 
-$outcome = battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
+$battleManager = new BattleManager();
+$outcome = $battleManager->battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
+
 ?>
 
 <html>
@@ -85,7 +87,7 @@ $outcome = battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
                     <?php endif; ?>
                 </p>
             </div>
-            <a href="/index.php"><p class="text-center"><i class="fa fa-undo"></i> Battle again</p></a>
+            <a href="/JediBattle/index.php"><p class="text-center"><i class="fa fa-undo"></i> Battle again</p></a>
         
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
