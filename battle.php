@@ -1,13 +1,9 @@
 <?php
 require __DIR__ . '/bootstrap.php';
 
-$pdo  = new PDO(
-    $configuration['db_dsn'],
-    $configuration['db_user'],
-    $configuration['db_pass']
-);
-$shipsLoader = new ShipLoader($pdo);
-$ships = $shipsLoader->getShips();
+$container = new Container($configuration);
+$shipLoader = $container->getShipLoader();
+$ships = $shipLoader->getShips();
 
 $ship1Id = isset($_POST['ship1_id']) ? $_POST['ship1_id'] : null;
 $ship1Quantity = isset($_POST['ship1_quantity']) ? $_POST['ship1_quantity'] : 1;
@@ -19,8 +15,8 @@ if (!$ship1Id || !$ship2Id) {
     die;
 }
 
-$ship1 = $shipsLoader->findOneById($ship1Id);
-$ship2 = $shipsLoader->findOneById($ship2Id);
+$ship1 = $shipLoader->findOneById($ship1Id);
+$ship2 = $shipLoader->findOneById($ship2Id);
 
 if (!$ship1 || !$ship2) {
     header('Location: /JediBattle/index.php?error=bad_ships');
@@ -34,7 +30,7 @@ if ($ship1Quantity <= 0 || $ship2Quantity <= 0) {
 
 
 
-$battleManager = new BattleManager();
+$battleManager = $container-> getBattleManager();
 $battleResult = $battleManager->battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
 
 ?>
