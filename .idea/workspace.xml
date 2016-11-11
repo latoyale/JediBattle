@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bde089f5-94f0-4844-8d6d-6e0113215ca5" name="Default" comment="" />
+    <list default="true" id="bde089f5-94f0-4844-8d6d-6e0113215ca5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Service/Container.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Container.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/BattleManager.php" afterPath="$PROJECT_DIR$/lib/Service/BattleManager.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/BattleResult.php" afterPath="$PROJECT_DIR$/lib/Model/BattleResult.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/Ship.php" afterPath="$PROJECT_DIR$/lib/Model/Ship.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/ShipLoader.php" afterPath="$PROJECT_DIR$/lib/Service/ShipLoader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/battle.php" afterPath="$PROJECT_DIR$/battle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap.php" afterPath="$PROJECT_DIR$/bootstrap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/play.php" afterPath="$PROJECT_DIR$/play.php" />
+    </list>
     <ignored path="www.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -297,12 +309,12 @@
       <workItem from="1478648670277" duration="70000" />
       <workItem from="1478648876209" duration="7000" />
       <workItem from="1478648889262" duration="2051000" />
-      <workItem from="1478881510058" duration="4188000" />
+      <workItem from="1478881510058" duration="4137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45441000" />
+    <option name="totallyTimeSpent" value="45390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-362" y="1072" width="1616" height="876" extended-state="6" />
