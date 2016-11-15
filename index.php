@@ -5,7 +5,6 @@ $shipLoader = $container->getShipLoader();
 $ships = $shipLoader->getShips();
 
 $rebelShip = new RebelShip('My new Rebel Ship');
-var_dump($rebelShip->getFavoriteJedi());die;
 $ships[] = $rebelShip;
 
 $errorMessage = '';
