@@ -52,7 +52,7 @@ class Container
     public function getBattleManager()
     {
         if($this->battleManager === null){
-            $this->battleManager = new battleManager();
+            $this->battleManager = new BattleManager();
         }
 
         return $this->battleManager;
