@@ -14,4 +14,9 @@ class RebelShip extends Ship
 
         return $coolJedis[$key];
     }
+
+    public function getType()
+    {
+        return 'Rebel';
+    }
 }
