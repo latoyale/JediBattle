@@ -44,8 +44,7 @@ class ShipLoader
 
     private function createShipFromData(array $shipData)
     {
-        var_dump($shipData);
-        if ($shipData['team'] == 'rebel'){
+         if ($shipData['team'] == 'rebel'){
             $ship = new RebelShip($shipData['name']);
         } else {
             $ship = new Ship($shipData['name']);
