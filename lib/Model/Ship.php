@@ -131,4 +131,13 @@ class Ship
     {
         $this->id = $id;
     }
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        echo 'Get parent';
+        return 'Empire';
+    }
 }
