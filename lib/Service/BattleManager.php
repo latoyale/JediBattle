@@ -2,14 +2,9 @@
 
 class BattleManager
 {
-
     /**
      * Our complex fighting algorithm!
      *
-     * @param Ship $ship1
-     * @param $ship1Quantity
-     * @param Ship $ship2
-     * @param $ship2Quantity
      * @return BattleResult
      */
     public function battle(Ship $ship1, $ship1Quantity, Ship $ship2, $ship2Quantity)
@@ -38,6 +33,8 @@ class BattleManager
             $ship1Health = $ship1Health - ($ship2->getWeaponPower() * $ship2Quantity);
             $ship2Health = $ship2Health - ($ship1->getWeaponPower() * $ship1Quantity);
         }
+
+        // update the strengths on the ships, so we can show this
         $ship1->setStrength($ship1Health);
         $ship2->setStrength($ship2Health);
 
@@ -57,13 +54,12 @@ class BattleManager
         }
 
         return new BattleResult($usedJediPowers, $winningShip, $losingShip);
-
     }
+
     private function didJediDestroyShipUsingTheForce(Ship $ship)
     {
         $jediHeroProbability = $ship->getJediFactor() / 100;
 
         return mt_rand(1, 100) <= ($jediHeroProbability*100);
     }
-
 }

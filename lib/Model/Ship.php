@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: latoyale
- * Date: 11/6/2016
- * Time: 1:06 AM
- */
 class Ship
 {
     private $id;
@@ -20,12 +14,11 @@ class Ship
 
     private $underRepair;
 
-
-
     public function __construct($name)
     {
         $this->name = $name;
-        $this->underRepair = mt_rand(1,100) < 30;
+        // randomly put this ship under repair
+        $this->underRepair = mt_rand(1, 100) < 30;
     }
 
     public function isFunctional()
@@ -42,14 +35,14 @@ class Ship
     {
         return $this->name;
     }
-
-    public function setStrength($strength)
+    
+    public function setStrength($number)
     {
-        if (!is_numeric($strength)) {
+        if (!is_numeric($number)) {
             throw new \Exception('Strength must be a number, duh!');
         }
 
-        $this->strength = $strength;
+        $this->strength = $number;
     }
 
     public function getStrength()
@@ -123,9 +116,8 @@ class Ship
         $this->jediFactor = $jediFactor;
     }
 
-
     /**
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -133,12 +125,10 @@ class Ship
     }
 
     /**
-     * @param integer $id
+     * @param int $id
      */
     public function setId($id)
     {
         $this->id = $id;
     }
-
-
 }
