@@ -6,7 +6,7 @@
  * Date: 11/11/2016
  * Time: 5:12 PM
  */
-class RebelShip extends Ship
+class RebelShip extends AbstractShip
 {
     public function getFavoriteJedi(){
         $coolJedis = array('Yoda', 'Ben Kenobi');
@@ -32,4 +32,8 @@ class RebelShip extends Ship
         return $val;
     }
 
+    public function getJediFactor()
+    {
+        return rand(10,30);
+    }
 }
